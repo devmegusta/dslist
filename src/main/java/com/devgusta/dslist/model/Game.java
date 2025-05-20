@@ -10,29 +10,38 @@ public class Game {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titlle;
+    private String title;
+
     @Column (name = "game_year")
     private Integer year;
+
     private String genre;
-    private String platform;
+
+    private String platforms;
+
     private Double score;
+
     private String imgUrl;
-    private String shortDiscription;
-    private String longDiscription;
+
+    @Column (columnDefinition = "TEXT")
+    private String shortDescription;
+
+    @Column (columnDefinition = "TEXT")
+    private String longDescription;
 
     public Game(){
     }
 
-    public Game(Long id, String longDiscription, String shortDiscription, String imgUrl, Double score, String platform, String genre, Integer year, String titlle) {
+    public Game(Long id, String longDescription, String shortDescription, String imgUrl, Double score, String platforms, String genre, Integer year, String title) {
         this.id = id;
-        this.longDiscription = longDiscription;
-        this.shortDiscription = shortDiscription;
+        this.longDescription = longDescription;
+        this.shortDescription = shortDescription;
         this.imgUrl = imgUrl;
         this.score = score;
-        this.platform = platform;
+        this.platforms= platforms;
         this.genre = genre;
         this.year = year;
-        this.titlle = titlle;
+        this.title = title;
     }
 
     public Long getId() {
@@ -43,12 +52,12 @@ public class Game {
         this.id = id;
     }
 
-    public String getTitlle() {
-        return titlle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitlle(String titlle) {
-        this.titlle = titlle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Integer getYear() {
@@ -67,12 +76,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlatform() {
-        return platform;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlatform(String platform) {
-        this.platform = platform;
+    public void setPlatforms(String platform) {
+        this.platforms = platform;
     }
 
     public Double getScore() {
@@ -91,20 +100,20 @@ public class Game {
         this.imgUrl = imgUrl;
     }
 
-    public String getShortDiscription() {
-        return shortDiscription;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
-    public void setShortDiscription(String shortDiscription) {
-        this.shortDiscription = shortDiscription;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
-    public String getLongDiscription() {
-        return longDiscription;
+    public String getLongDescription() {
+        return longDescription;
     }
 
-    public void setLongDiscription(String longDiscription) {
-        this.longDiscription = longDiscription;
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 
     @Override
